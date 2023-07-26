@@ -35,14 +35,14 @@
 
     <ImageView
         android:id="@+id/lockedImageView"
-        android:layout_width="126dp"
-        android:layout_height="350dp"
+        android:layout_width="189dp"
+        android:layout_height="377dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212"
-        app:srcCompat="@drawable/baseline_lock_clock_24"/>
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/locked2" />
 
     <EditText
         android:id="@+id/otpEditText"
@@ -85,15 +85,15 @@
 
     <ImageView
         android:id="@+id/unlockedImageView"
-        android:layout_width="159dp"
-        android:layout_height="107dp"
+        android:layout_width="189dp"
+        android:layout_height="377dp"
+android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961"
-        app:srcCompat="@drawable/baseline_lock_open_24"
-        android:visibility="gone" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/unlocked2" />
 
     <ImageView
         android:id="@+id/loaderImageView"
@@ -107,6 +107,21 @@
         app:srcCompat="@drawable/loadinggif8"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/errorMessage2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invalid credentials. Please try again!"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/copyrighttv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.646"
+        android:visibility="gone"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

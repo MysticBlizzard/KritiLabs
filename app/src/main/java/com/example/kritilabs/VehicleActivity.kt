@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class VehicleActivity : AppCompatActivity() {
@@ -12,6 +14,7 @@ class VehicleActivity : AppCompatActivity() {
     private lateinit var invoiceNumberEditText: EditText
     private lateinit var requestOtpButton: Button
     private lateinit var connectToLockButton: Button
+    private lateinit var errorMessageTextView3: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,7 @@ class VehicleActivity : AppCompatActivity() {
         invoiceNumberEditText = findViewById(R.id.invno)
         requestOtpButton = findViewById(R.id.requestOtpButton)
         connectToLockButton = findViewById(R.id.connecttoLockButton)
+        errorMessageTextView3= findViewById(R.id.errorMessage3)
 
         // Handle request OTP button click
         requestOtpButton.setOnClickListener {
@@ -49,11 +53,7 @@ class VehicleActivity : AppCompatActivity() {
         val vehicleNumber = vehicleNumberEditText.text.toString()
         val invoiceNumber = invoiceNumberEditText.text.toString()
 
-        // TODO: Implement your logic to send an OTP request to the backend
-        // You will need to integrate with your backend service or API here
-        // This code is a placeholder and needs to be replaced with your actual implementation
-
-        // Here, you can simulate a response from the backend
+        // Simulate OTP request by checking if the vehicle and invoice numbers are valid
         val otpRequestSuccessful = simulateOTPRequest(vehicleNumber, invoiceNumber)
 
         if (otpRequestSuccessful) {
@@ -61,7 +61,8 @@ class VehicleActivity : AppCompatActivity() {
             // Perform any necessary actions, such as showing a success message or navigating to the next screen
         } else {
             // OTP request failed
-            // Handle the failure case, such as showing an error message or retrying the request
+            // Show an error message to the user
+            Toast.makeText(this, "Incorrect credentials. Please try again.", Toast.LENGTH_SHORT).show()
         }
     }
 
